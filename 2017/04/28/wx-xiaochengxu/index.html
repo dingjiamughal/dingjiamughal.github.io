@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://dingjiamughal.github.io">
   <title>微信小程序初体验 | Djmughal&#39;s website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近由于项目所需，开始着手研究微信小程序开发，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解">
+  <meta name="description" content="被某人忽悠微信小程序，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解">
 <meta name="keywords" content="微信小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信小程序初体验">
 <meta property="og:url" content="http://dingjiamughal.github.io/2017/04/28/wx-xiaochengxu/index.html">
 <meta property="og:site_name" content="Djmughal's website">
-<meta property="og:description" content="最近由于项目所需，开始着手研究微信小程序开发，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解">
-<meta property="og:updated_time" content="2017-04-28T10:55:20.985Z">
+<meta property="og:description" content="被某人忽悠微信小程序，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解">
+<meta property="og:updated_time" content="2017-04-28T11:05:18.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序初体验">
-<meta name="twitter:description" content="最近由于项目所需，开始着手研究微信小程序开发，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解">
+<meta name="twitter:description" content="被某人忽悠微信小程序，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解">
   
     <link rel="alternative" href="/atom.xml" title="Djmughal&#39;s website" type="application/atom+xml">
   
@@ -176,7 +176,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近由于项目所需，开始着手研究微信小程序开发，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解</p>
+        <p>被某人忽悠微信小程序，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解</p>
 <a id="more"></a>
 <h3 id="1-前期工作"><a href="#1-前期工作" class="headerlink" title="1. 前期工作"></a>1. 前期工作</h3><p>小程序的语法简洁，基于HTML,CSS,JavaScript。对于前端开发人员非常友好。<br>创建目录时，允许生成四种文件格式：wxml、wxss、json、js。分别对应html、css、json、js。其中json文件用来写配置项。<br>我们使用<code>app.json</code>文件来对微信小程序进行全局配置，决定页面文件的路径、窗口表现、设置网络超时时间、设置多 tab 等。<br>以下是一个包含了所有配置选项的<code>app.json</code>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">  &quot;pages&quot;: [                                      //所有涉及的页面集合</div><div class="line">    &quot;pages/index/index&quot;,                          //第一行为起始页</div><div class="line">    &quot;pages/logs/index&quot;</div><div class="line">  ],</div><div class="line">  &quot;window&quot;: &#123;                                       </div><div class="line">    &quot;navigationBarTitleText&quot;: &quot;Demo&quot;              //设置顶部标题</div><div class="line">  &#125;,</div><div class="line">  &quot;tabBar&quot;: &#123;                                     //工具栏，tabBar是一个数组，只能配置最少2个、最多5个</div><div class="line">    &quot;list&quot;: [&#123;</div><div class="line">      &quot;pagePath&quot;: &quot;pages/index/index&quot;,</div><div class="line">      &quot;text&quot;: &quot;首页&quot;</div><div class="line">    &#125;, &#123;</div><div class="line">      &quot;pagePath&quot;: &quot;pages/logs/logs&quot;,</div><div class="line">      &quot;text&quot;: &quot;日志&quot;</div><div class="line">    &#125;]</div><div class="line">  &#125;,</div><div class="line">  &quot;networkTimeout&quot;: &#123;                            //请求超时时间限制，校验请求域名和TLS版本</div><div class="line">    &quot;request&quot;: 10000,</div><div class="line">    &quot;downloadFile&quot;: 10000</div><div class="line">  &#125;,</div><div class="line">  &quot;debug&quot;: true</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>app.js中<code>App()</code>函数用来注册一个小程序。接受一个<code>object</code>参数，其指定小程序的生命周期函数等。<br><code>onLaunch</code>监听小程序初始化，当小程序初始化完成时，会触发 onLaunch（全局只触发一次）。<br><code>onHide</code>当小程序启动，或从后台进入前台显示，会触发 onShow<br><code>onShow</code>当小程序从前台进入后台，会触发 onHide<br><code>onError</code>当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息<br><code>ObjName</code>全局的 getApp() 函数，可以获取到小程序实例，在子页面中调用，如：<code>var appInstance = getApp()appInstance.ObjName</code></p>
@@ -438,11 +438,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+                <a href="javascript:void(0)" class="js-tag color5">NULL TAGS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">NULL TAGS</a>
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
             
             <div class="clearfix"></div>
