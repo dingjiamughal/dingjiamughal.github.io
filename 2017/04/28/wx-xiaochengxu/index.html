@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://dingjiamughal.github.io/2017/04/28/wx-xiaochengxu/index.html">
 <meta property="og:site_name" content="Djmughal's website">
 <meta property="og:description" content="最近由于项目所需，开始着手研究微信小程序开发，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解">
-<meta property="og:updated_time" content="2017-04-28T10:50:56.867Z">
+<meta property="og:updated_time" content="2017-04-28T10:55:20.985Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序初体验">
 <meta name="twitter:description" content="最近由于项目所需，开始着手研究微信小程序开发，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解">
@@ -204,11 +204,13 @@
 <li>事件名称不用<code>双括号</code>包裹</li>
 <li>小程序中的点击事件为tap，但一定要加前缀bind/catch bind事件冒泡，catch阻止冒泡</li>
 <li>index为下标，数组索引</li>
-<li>wx-if上面介绍过，判断显示隐藏，支持直接在里面写判断逻辑，wx-if绑定的值为true时，show，事件完成后通过改变wx-if的值来控制dom<br>不同于jQuery的操作模式，这个demo和angularjs有点相似，我在简书上也写过一个angularjs选项卡的demo，<a href="http://www.jianshu.com/p/fe7371a16ae4。" target="_blank" rel="external">http://www.jianshu.com/p/fe7371a16ae4。</a></li>
+<li>wx-if上面介绍过，判断显示隐藏，支持直接在里面写判断逻辑，wx-if绑定的值为true时，show，事件完成后通过改变wx-if的值来控制dom</li>
 </ul>
 </blockquote>
+<p>不同于jQuery的操作模式，这个demo和angularjs有点相似，我在简书上也写过一个angularjs选项卡的demo，<a href="http://www.jianshu.com/p/fe7371a16ae4" target="_blank" rel="external">Angularjs选项卡</a></p>
 <p>小程序有自己特定的html语义化标签，最常用的<view>和<text>，也有内部封装好的swiper、form、navigetor、canvas组件等等。view标签等同于div，text标签等同于span，虽然span在文档中没有出现，但是小程序仍然支持，text包含的文字能够长按选中。文档中对组件的介绍也很详细，并且微信也推出<a href="https://github.com/weui/weui-wxss" target="_blank" rel="external">weui.wxss</a>样式库。</text></view></p>
-<p>一下午啥事没做就写了那么多，刚收到昨天做的仿掌盟app的小程序(<a href="http://api.games-cube.com/video/" target="_blank" rel="external">DAIWAN</a>提供的api)审核不通过的消息，很伤心。感觉个人用户申请小程序提交了也上线不了，还是要注册个公司，太坑了。<br>小程序学习成本很低，对于jQuery过渡到vue/react/angularjs的同学来说是个不错的选择。<br>不早了该抢个粥下班了，膀胱文</p>
+<p>一下午啥事没做就写了那么多，刚收到昨天做的仿掌盟app的小程序(<a href="http://api.games-cube.com/video/" target="_blank" rel="external">DAIWAN</a>提供的api)审核不通过的消息，很伤心。感觉个人用户申请小程序提交了也上线不了，还是要注册个公司，太坑了。</p>
+<p>小程序学习成本很低，对于jQuery过渡到vue/react/angularjs的同学来说是个不错的选择。<br>不早了该抢个粥下班了。</p>
 <p>未完待续···</p>
 
       
@@ -436,11 +438,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">NULL TAGS</a>
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+                <a href="javascript:void(0)" class="js-tag color5">NULL TAGS</a>
               </li>
             
             <div class="clearfix"></div>
