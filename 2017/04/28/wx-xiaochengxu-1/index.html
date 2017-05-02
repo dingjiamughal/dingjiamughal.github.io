@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dingjiamughal.github.io">
-  <title>Hello World | Djmughal&#39;s website</title>
+  <title>微信小程序初体验 | Djmughal&#39;s website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hello World">
-<meta name="keywords" content="Hello World">
+  <meta name="description" content="被某人忽悠微信小程序，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解">
+<meta name="keywords" content="微信小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://dingjiamughal.github.io/2017/04/03/nullpage/index.html">
+<meta property="og:title" content="微信小程序初体验">
+<meta property="og:url" content="http://dingjiamughal.github.io/2017/04/28/wx-xiaochengxu-1/index.html">
 <meta property="og:site_name" content="Djmughal's website">
-<meta property="og:description" content="Hello World">
-<meta property="og:updated_time" content="2017-05-02T02:57:27.009Z">
+<meta property="og:description" content="被某人忽悠微信小程序，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解">
+<meta property="og:updated_time" content="2017-05-02T03:04:59.553Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Hello World">
+<meta name="twitter:title" content="微信小程序初体验">
+<meta name="twitter:description" content="被某人忽悠微信小程序，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解">
   
     <link rel="alternative" href="/atom.xml" title="Djmughal&#39;s website" type="application/atom+xml">
   
@@ -156,28 +156,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-nullpage" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-wx-xiaochengxu-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      微信小程序初体验
     </h1>
   
 
         
-        <a href="/2017/04/03/nullpage/" class="archive-article-date">
-  	<time datetime="2017-04-03T08:10:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-03</time>
+        <a href="/2017/04/28/wx-xiaochengxu-1/" class="archive-article-date">
+  	<time datetime="2017-04-28T06:45:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hello World</p>
+        <p>被某人忽悠微信小程序，看了两天文档，写了些demo试了试手。总结几点个人对小程序的理解</p>
 <a id="more"></a>
+<p>[TOC]</p>
+<h3 id="1-前期工作"><a href="#1-前期工作" class="headerlink" title="1. 前期工作"></a>1. 前期工作</h3><p>小程序的语法简洁，基于HTML,CSS,JavaScript。对于前端开发人员非常友好。<br>创建目录时，允许生成四种文件格式：wxml、wxss、json、js。分别对应html、css、json、js。其中json文件用来写配置项。<br>我们使用<code>app.json</code>文件来对微信小程序进行全局配置，决定页面文件的路径、窗口表现、设置网络超时时间、设置多 tab 等。<br>以下是一个包含了所有配置选项的<code>app.json</code>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">  &quot;pages&quot;: [                                      //所有涉及的页面集合</div><div class="line">    &quot;pages/index/index&quot;,                          //第一行为起始页</div><div class="line">    &quot;pages/logs/index&quot;</div><div class="line">  ],</div><div class="line">  &quot;window&quot;: &#123;                                       </div><div class="line">    &quot;navigationBarTitleText&quot;: &quot;Demo&quot;              //设置顶部标题</div><div class="line">  &#125;,</div><div class="line">  &quot;tabBar&quot;: &#123;                                     //工具栏，tabBar是一个数组，只能配置最少2个、最多5个</div><div class="line">    &quot;list&quot;: [&#123;</div><div class="line">      &quot;pagePath&quot;: &quot;pages/index/index&quot;,</div><div class="line">      &quot;text&quot;: &quot;首页&quot;</div><div class="line">    &#125;, &#123;</div><div class="line">      &quot;pagePath&quot;: &quot;pages/logs/logs&quot;,</div><div class="line">      &quot;text&quot;: &quot;日志&quot;</div><div class="line">    &#125;]</div><div class="line">  &#125;,</div><div class="line">  &quot;networkTimeout&quot;: &#123;                            //请求超时时间限制，校验请求域名和TLS版本</div><div class="line">    &quot;request&quot;: 10000,</div><div class="line">    &quot;downloadFile&quot;: 10000</div><div class="line">  &#125;,</div><div class="line">  &quot;debug&quot;: true</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>app.js中<code>App()</code>函数用来注册一个小程序。接受一个<code>object</code>参数，其指定小程序的生命周期函数等。<br><code>onLaunch</code>监听小程序初始化，当小程序初始化完成时，会触发 onLaunch（全局只触发一次）。<br><code>onHide</code>当小程序启动，或从后台进入前台显示，会触发 onShow<br><code>onShow</code>当小程序从前台进入后台，会触发 onHide<br><code>onError</code>当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息<br><code>ObjName</code>全局的 getApp() 函数，可以获取到小程序实例，在子页面中调用，如：<code>var appInstance = getApp()appInstance.ObjName</code></p>
+<h3 id="2-编写第一个小程序应用"><a href="#2-编写第一个小程序应用" class="headerlink" title="2. 编写第一个小程序应用"></a>2. 编写第一个小程序应用</h3><p>在配置完成之后，可以开始编写应用了，为了继承小程序简洁的风格，将所有的页面放在Pages文件夹，开发工具默认创建了<code>index</code>和<code>logs</code>文件，在运行之前需要确保创建的json文件中有<code>{}</code>js文件中要有<code>Page({})</code>，否则会控制台报错但对程序运行没有影响，这可能是小程序的编写规范吧，在开发文档中也没有提到。</p>
+<p>这里我想谈谈对脚本中<code>Page()</code>的理解，官方定义<code>Page()</code>函数用来注册一个页面。接受一个 object 参数，其指定页面的初始数据、生命周期函数、事件处理函数等。这似乎和启动项app.js中的App()是一样的，的确在对比了很久之后发现确实没多大区别，从定义和语法上都是一样的，唯一的区别应该就是控制权限，小程序为了更加模块化，把app.js当父，pages文件夹中的js文件为子，文件之间可以相互调用，用node.js和react语法都能实现配置项调用，个人喜欢用module.exports = {key:value};var a = require(“文件名”)得到实例</p>
+<p>写到这里大概可以谈谈小程序的精髓了 —— 单项数据绑定，基于MVVM数据层的操作，dom操作（包括获取节点）在小程序中完全摒弃。这对于忠实的jQuery粉丝来说会非常不适应，一些最基本的dom操作，例如显示隐藏在小程序中也需要通过一个参数绑定切换数据值来完成dom操作，这个下面细说，期初刚看到小程序脚本语法的时候，觉得既然小程序提倡“小”那为什么不用jQuery呢，后来想了想小程序的应用场景，小程序适合展示页并不会有过多的dom操作，适合类似豆瓣、简书这类数据展示的应用，因此会有许多重复的模板只需要接受事件改变数据就可以了，通过和jQuery比较也可以很好的理解小程序基于数据的编程思想。<br>举个简单的例子，“显示一个元素”这个功能用jQuery来实现：</p>
+<blockquote>
+<p>$(“#el”).show();</p>
+</blockquote>
+<p>而使用MVVM是这样：</p>
+<blockquote>
+<p>&lt; div xx-show=”isShow”&gt;<br>xx.isShow = true;</p>
+</blockquote>
+<p>但是我们如果只需要处理”显示元素”这类简单的问题的话，使用<code>jQuery</code>或者MVVM的方式都无所谓了。<br>当我们面临需要频繁的插入一大段含有js变量的<code>HTML</code>：<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//jQuery</span></div><div class="line"><span class="keyword">var</span> html= '&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"panel panel-success"</span>&gt;'</div><div class="line">        + '&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"panel-heading text-center"</span>&gt;'</div><div class="line">        + '&lt;h3 role=<span class="string">"button"</span> data-toggle=<span class="string">"collapse"</span>aria-controls=<span class="string">"content-banners-1"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"panel-title"</span>&gt;'+res.title+'&lt;/h3&gt;'</div><div class="line">        + '&lt;/div&gt;'</div><div class="line">        + '&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"collapse in"</span> id=<span class="string">"content-banners-1"</span>&gt;'</div><div class="line">        + '&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"panel-body"</span>&gt;'</div><div class="line">        + '&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;'+res.content+'&lt;/div&gt;'</div><div class="line">        + '&lt;input <span class="class"><span class="keyword">type</span></span>=<span class="string">"hidden"</span> id=<span class="string">"upload-url"</span>&gt;'</div><div class="line">        + '&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;';</div><div class="line"><span class="comment">//然后做模板处理</span></div><div class="line"><span class="comment">//最后插入</span></div><div class="line">$('#parent').html( html );</div></pre></td></tr></table></figure></p>
+<p>相比之下：<br><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="xml">//MVVM</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- template --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel panel-success"</span> <span class="attr">xx-if</span>=<span class="string">"isShow"</span>&gt;</span></div><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">class</span>=<span class="string">"panel-title"</span>&gt;</span><span class="template-variable">&#123;&#123;title&#125;&#125;</span><span class="xml"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span><span class="template-variable">&#123;&#123;content&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">...</div><div class="line">//javascript</div><div class="line">xx.title= 'title';</div><div class="line">xx.content= 'hello,world!';</div><div class="line">xx.isShow = true;</div></pre></td></tr></table></figure></p>
+<p>简洁性和可读性相形见绌。并且在越复杂的操作DOM的情况下，就能显示出MVVM的优势。<br>当脚本中的数据变化时，前台页面的数据也会相应的变化，不用于angularjs的双向数据绑定，单项数据绑定只能用脚本控制视图，视图变化不会影响到脚本文件中数据。<br>小程序有自己的一套数据绑定的语法。所有的逻辑层都可以（应当）写在Page()中，和组件开发调用方式非常相似，小程序规范了所有数据都必须写在data对象中，改变数据层不能直接用this.data.xxx的方式对数据进行赋值，这样没效果，必须用this.setData({})内部传入一个键值对的对象（们），这里有个坑，只能是对象，不能是数组！不能是数组！不能是数组！数组中包对象的形式是不行的，必须要有key值，当初这个犯了这个错误调了一个小时才解决。</p>
+<p>一个数据绑定和事件处理例子<br><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="xml">//wxml</span></div><div class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"page"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"page__bd"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"weui-tab"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"weui-navbar"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">"</span></span><span class="template-variable">&#123;&#123;tabs&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> <span class="attr">wx:key</span>=<span class="string">"*this"</span>&gt;</span></span></div><div class="line">          <span class="tag">&lt;<span class="name">view</span> <span class="attr">id</span>=<span class="string">"</span></span><span class="template-variable">&#123;&#123;index&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> <span class="attr">class</span>=<span class="string">"weui-navbar__item </span></span></span><span class="template-variable">&#123;&#123;activeIndex == index ? 'weui-bar__item_on' : ''&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> <span class="attr">bindtap</span>=<span class="string">"tabClick"</span>&gt;</span></span></div><div class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"weui-navbar__title"</span>&gt;</span><span class="template-variable">&#123;&#123;item&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></div><div class="line">          <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">block</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"weui-navbar__slider"</span> <span class="attr">style</span>=<span class="string">"left: </span></span><span class="template-variable">&#123;&#123;sliderLeft&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">px; transform: translateX(</span></span></span><span class="template-variable">&#123;&#123;sliderOffset&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">px); -webkit-transform: translateX(</span></span></span><span class="template-variable">&#123;&#123;sliderOffset&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">px);"</span>&gt;</span><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></div><div class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"weui-tab__panel"</span>&gt;</span></div><div class="line">        //<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"weui-tab__content"</span> <span class="attr">hidden</span>=<span class="string">"</span></span><span class="template-variable">&#123;&#123;activeIndex != 0&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span>选项一的内容<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></div><div class="line">        //<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"weui-tab__content"</span> <span class="attr">hidden</span>=<span class="string">"</span></span><span class="template-variable">&#123;&#123;activeIndex != 1&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span>选项二的内容<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></div><div class="line">        //<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"weui-tab__content"</span> <span class="attr">hidden</span>=<span class="string">"</span></span><span class="template-variable">&#123;&#123;activeIndex != 2&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span>选项三的内容<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"weui-tab__content"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:for</span>=<span class="string">"</span></span><span class="template-variable">&#123;&#123;contents&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> <span class="attr">wx:if</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123;activeIndex==index&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span><span class="template-variable">&#123;&#123;item&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"page"</span> <span class="attr">wx:if</span>=<span class="string">"</span></span><span class="template-variable">&#123;&#123;activeIndex==1&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span>                    </span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">""</span>&gt;</span>我在activeIndex==1&#125;&#125;时出现<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"page"</span> <span class="attr">wx:if</span>=<span class="string">"</span></span><span class="template-variable">&#123;&#123;condition&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">""</span>&gt;</span>我在condition==true时出现<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//js</span></div><div class="line"><span class="keyword">var</span> sliderWidth = <span class="number">96</span>; <span class="comment">// 需要设置slider的宽度，用于计算中间位置</span></div><div class="line">Page(&#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">scrollTop</span>: <span class="number">100</span>,</div><div class="line">    <span class="attr">tabs</span>: [<span class="string">"选项一"</span>, <span class="string">"选项二"</span>, <span class="string">"选项三"</span>],</div><div class="line">    <span class="attr">contents</span>:[<span class="string">"选项一的内容"</span>,<span class="string">"选项二的内容"</span>,<span class="string">"选项三的内容"</span>],</div><div class="line">    <span class="attr">activeIndex</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">sliderOffset</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">sliderLeft</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">condition</span>: <span class="literal">true</span>,</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">onLoad</span>: <span class="function"><span class="keyword">function</span> (<span class="params">option</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(option);</div><div class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">    wx.getSystemInfo(&#123;</div><div class="line">      <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</div><div class="line">        that.setData(&#123;</div><div class="line">          <span class="attr">sliderLeft</span>: (res.windowWidth / that.data.tabs.length - sliderWidth) / <span class="number">2</span>,</div><div class="line">          <span class="attr">sliderOffset</span>: res.windowWidth / that.data.tabs.length * that.data.activeIndex</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">tabClick</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(e)</div><div class="line">    <span class="keyword">this</span>.setData(&#123;</div><div class="line">      <span class="attr">sliderOffset</span>: e.currentTarget.offsetLeft,</div><div class="line">      <span class="attr">activeIndex</span>: e.currentTarget.id,                     <span class="comment">//activeIndex为鼠标点击目标的id</span></div><div class="line"></div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">if</span> (e.currentTarget.id == <span class="number">2</span>) &#123;</div><div class="line">      <span class="keyword">this</span>.setData(&#123;</div><div class="line">        <span class="attr">condition</span>: <span class="literal">true</span></div><div class="line">      &#125;)</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">this</span>.setData(&#123;</div><div class="line">        <span class="attr">condition</span>: <span class="literal">false</span></div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>第一部分绑定数值，对列表进行渲染，wx:for=循环绑定<br>这是个选项卡，功能是点击后显示对应内容以及tab的dom样式<br>通过鼠标点击event事件对象，e.currentTarget属性找到index来与dom连接关系</p>
+<blockquote>
+<ul>
+<li>sliderLeft：容器的left值，sliderOffset：滚动条的left值</li>
+<li>小程序规定规则都以属性形式展现</li>
+<li>page中data，可变数据用<code>双括号</code>包裹</li>
+<li>事件名称不用<code>双括号</code>包裹</li>
+<li>小程序中的点击事件为tap，但一定要加前缀bind/catch bind事件冒泡，catch阻止冒泡</li>
+<li>index为下标，数组索引</li>
+<li>wx-if上面介绍过，判断显示隐藏，支持直接在里面写判断逻辑，wx-if绑定的值为true时，show，事件完成后通过改变wx-if的值来控制dom</li>
+</ul>
+</blockquote>
+<p>不同于jQuery的操作模式，这个demo和angularjs有点相似，我在简书上也写过一个angularjs选项卡的demo，<a href="http://www.jianshu.com/p/fe7371a16ae4" target="_blank" rel="external">Angularjs选项卡</a></p>
+<p>小程序有自己特定的html语义化标签，最常用的<view>和<text>，也有内部封装好的swiper、form、navigetor、canvas组件等等。view标签等同于div，text标签等同于span，虽然span在文档中没有出现，但是小程序仍然支持，text包含的文字能够长按选中。文档中对组件的介绍也很详细，并且微信也推出<a href="https://github.com/weui/weui-wxss" target="_blank" rel="external">weui.wxss</a>样式库。</text></view></p>
+<p>一下午啥事没做就写了那么多，刚收到昨天做的仿掌盟app的小程序(<a href="http://api.games-cube.com/video/" target="_blank" rel="external">DAIWAN</a>提供的api)审核不通过的消息，很伤心。感觉个人用户申请小程序提交了也上线不了，还是要注册个公司，太坑了。</p>
+<p>小程序学习成本很低，对于jQuery过渡到vue/react/angularjs的同学来说是个不错的选择。<br>不早了该抢个粥下班了。</p>
+<p>未完待续···</p>
 
       
 
@@ -212,13 +247,24 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hello World</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/微信小程序/" class="article-tag-list-link color1">微信小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -268,7 +314,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://dingjiamughal.github.io/2017/04/03/nullpage/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://dingjiamughal.github.io/2017/04/28/wx-xiaochengxu-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,9 +328,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2017/04/03/nullpage/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
   
-    <a href="/2017/04/28/wx-xiaochengxu-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">微信小程序初体验</div>
+  
+    <a href="/2017/05/01/flyjs/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQuery实现加入购物车飞入动画效果</div>
       <i class="icon-circle-right"></i>
     </a>
   
