@@ -156,6 +156,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-nodejs-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/08/nodejs-2/">nodejs-2</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/08/nodejs-2/" class="archive-article-date">
+  	<time datetime="2017-05-08T08:42:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Http模块"><a href="#Http模块" class="headerlink" title="Http模块"></a>Http模块</h3><p>Node.js是服务器的程序，写的js语句，都将运行在服务器上。返回给客户的，都是已经处理好的纯html。<br>Node.js中，将很多的功能，划分为了一个个mudule<br>有一些程序需要使用fs功能（文件读取功能），有一些不用的，所以为了效率，你用什么，就require什么。<br>npm包官网 <a href="https://www.npmjs.com/">www.npmjs.org</a><br>
+        
+          <a class="article-more-a" href="/2017/05/08/nodejs-2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/node.js/" class="article-tag-list-link color3">node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/08/nodejs-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-nodejs-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -176,9 +248,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><h2 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h2><p>V8引擎本身就是用于Chrome浏览器的JS解释部分，但是Ryan Dahl把V8搬到了服务器上，用于做服务器的软件。<br>Node.js是一个专注于实现高性能Web服务器优化的专家，几经探索，几经挫折后，遇到V8而诞生的项目。<br>Node.js是一个让JavaScript运行在服务器端的开发平台，它让JavaScript的触角伸到了服务器端，可以与PHP、JSP、Python、Ruby平起平坐。</p>
-<h2 id="1-2特点"><a href="#1-2特点" class="headerlink" title="1.2特点"></a>1.2特点</h2><p>单线程<br>Node.js不为每个客户连接创建一个新的线程，而仅仅使用一个线程。当有用户连接了，就触发一个内部事件，通过非阻塞I/O、事件驱动机制，让Node.js程序宏观上也是并行的。使用Node.js，一个8GB内存的服务器，可以同时处理超过4万用户的连接。<br>好处：操作系统完全不再有线程创建、销毁的时间开销。<br>坏处：一个用户造成了线程的崩溃，整个服务都崩溃了，其他人也崩溃了。<br><img src="../../img/node1.png" alt="单线程和多线程"></p>
-
+        <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><h3 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h3><p>V8引擎本身就是用于Chrome浏览器的JS解释部分，但是Ryan Dahl把V8搬到了服务器上，用于做服务器的软件。<br>Node.js是一个专注于实现高性能Web服务器优化的专家，几经探索，几经挫折后，遇到V8而诞生的项目。<br>Node.js是一个让JavaScript运行在服务器端的开发平台，它让JavaScript的触角伸到了服务器端，可以与PHP、JSP、Python、Ruby平起平坐。<br>
+        
+          <a class="article-more-a" href="/2017/05/08/nodejs-1/#more">more >></a>
+        
       
 
       
@@ -665,11 +738,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+                <a href="javascript:void(0)" class="js-tag color2">fly.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">fly.js</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,10 +755,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>

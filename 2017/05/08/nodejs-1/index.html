@@ -15,12 +15,13 @@
 <meta property="og:url" content="http://dingjiamughal.github.io/2017/05/08/nodejs-1/index.html">
 <meta property="og:site_name" content="Djmughal's website">
 <meta property="og:description" content="一、简介1.1 简介V8引擎本身就是用于Chrome浏览器的JS解释部分，但是Ryan Dahl把V8搬到了服务器上，用于做服务器的软件。Node.js是一个专注于实现高性能Web服务器优化的专家，几经探索，几经挫折后，遇到V8而诞生的项目。Node.js是一个让JavaScript运行在服务器端的开发平台，它让JavaScript的触角伸到了服务器端，可以与PHP、JSP、Python、Ruby">
-<meta property="og:image" content="http://dingjiamughal.github.io/2017/05/img/node1.png">
-<meta property="og:updated_time" content="2017-05-08T08:24:22.938Z">
+<meta property="og:image" content="http://dingjiamughal.github.io/img/node1.png">
+<meta property="og:image" content="http://dingjiamughal.github.io/img/node2.png">
+<meta property="og:updated_time" content="2017-05-08T08:44:46.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodejs-1">
 <meta name="twitter:description" content="一、简介1.1 简介V8引擎本身就是用于Chrome浏览器的JS解释部分，但是Ryan Dahl把V8搬到了服务器上，用于做服务器的软件。Node.js是一个专注于实现高性能Web服务器优化的专家，几经探索，几经挫折后，遇到V8而诞生的项目。Node.js是一个让JavaScript运行在服务器端的开发平台，它让JavaScript的触角伸到了服务器端，可以与PHP、JSP、Python、Ruby">
-<meta name="twitter:image" content="http://dingjiamughal.github.io/2017/05/img/node1.png">
+<meta name="twitter:image" content="http://dingjiamughal.github.io/img/node1.png">
   
     <link rel="alternative" href="/atom.xml" title="Djmughal&#39;s website" type="application/atom+xml">
   
@@ -178,8 +179,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><h2 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h2><p>V8引擎本身就是用于Chrome浏览器的JS解释部分，但是Ryan Dahl把V8搬到了服务器上，用于做服务器的软件。<br>Node.js是一个专注于实现高性能Web服务器优化的专家，几经探索，几经挫折后，遇到V8而诞生的项目。<br>Node.js是一个让JavaScript运行在服务器端的开发平台，它让JavaScript的触角伸到了服务器端，可以与PHP、JSP、Python、Ruby平起平坐。</p>
-<h2 id="1-2特点"><a href="#1-2特点" class="headerlink" title="1.2特点"></a>1.2特点</h2><p>单线程<br>Node.js不为每个客户连接创建一个新的线程，而仅仅使用一个线程。当有用户连接了，就触发一个内部事件，通过非阻塞I/O、事件驱动机制，让Node.js程序宏观上也是并行的。使用Node.js，一个8GB内存的服务器，可以同时处理超过4万用户的连接。<br>好处：操作系统完全不再有线程创建、销毁的时间开销。<br>坏处：一个用户造成了线程的崩溃，整个服务都崩溃了，其他人也崩溃了。<br><img src="../../img/node1.png" alt="单线程和多线程"></p>
+        <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><h3 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h3><p>V8引擎本身就是用于Chrome浏览器的JS解释部分，但是Ryan Dahl把V8搬到了服务器上，用于做服务器的软件。<br>Node.js是一个专注于实现高性能Web服务器优化的专家，几经探索，几经挫折后，遇到V8而诞生的项目。<br>Node.js是一个让JavaScript运行在服务器端的开发平台，它让JavaScript的触角伸到了服务器端，可以与PHP、JSP、Python、Ruby平起平坐。<br><a id="more"></a></p>
+<h3 id="1-2特点"><a href="#1-2特点" class="headerlink" title="1.2特点"></a>1.2特点</h3><h4 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h4><p>Node.js不为每个客户连接创建一个新的线程，而仅仅使用一个线程。当有用户连接了，就触发一个内部事件，通过非阻塞I/O、事件驱动机制，让Node.js程序宏观上也是并行的。使用Node.js，一个8GB内存的服务器，可以同时处理超过4万用户的连接。<br>好处：操作系统完全不再有线程创建、销毁的时间开销。<br>坏处：一个用户造成了线程的崩溃，整个服务都崩溃了，其他人也崩溃了。<br><img src="/img/node1.png" alt="单线程和多线程"></p>
+<h4 id="非阻塞I-O"><a href="#非阻塞I-O" class="headerlink" title="非阻塞I/O"></a>非阻塞I/O</h4><p>当在访问数据库取得数据的时候，需要一段时间。在传统的单线程处理机制中，在执行了访问数据库代码之后，整个线程都将暂停下来，等待数据库返回结果，才能执行后面的代码。也就是说，I/O阻塞了代码的执行，极大地降低了程序的执行效率。<br>但是Node.js中采用了非阻塞型I/O机制，因此在执行了访问数据库的代码之后，将立即转而执行其后面的代码，把数据库返回结果的处理代码放在回调函数中，从而提高了程序的执行效率。<br>当某个I/O执行完毕时，将以事件的形式通知执行I/O操作的线程，线程执行这个事件的回调函数。为了处理异步I/O，线程必须有事件循环，不断的检查有没有未处理的事件，依次予以处理。<br>阻塞模式下，一个线程只能处理一项任务，要想提高吞吐量必须通过多线程。而非阻塞模式下，一个线程永远在执行计算操作，这个线程的CPU核心利用率永远是100%。</p>
+<h4 id="事件驱动"><a href="#事件驱动" class="headerlink" title="事件驱动"></a>事件驱动</h4><p>在Node中，客户端请求建立连接，提交数据等行为，会触发相应的事件。在Node中，在一个时刻，只能执行一个事件回调函数，但是在执行一个事件回调函数的中途，可以转而处理其他事件（比如，又有新用户连接了），然后返回继续执行原事件的回调函数，这种处理机制，称为“事件环”机制。<br>Node.js底层是C++（V8是C++写的）。底层代码中，近半数都用于事件队列、回调函数队列的构建。用事件驱动来完成服务器的任务调度，针尖上的舞蹈，用一个线程，担负起了处理非常多的任务的使命。<br><img src="/img/node2.png" alt="事件驱动"></p>
+<h3 id="1-3适合开发的应用"><a href="#1-3适合开发的应用" class="headerlink" title="1.3适合开发的应用"></a>1.3适合开发的应用</h3><p>善于I/O，不善于计算。因为Node.js最擅长的就是任务调度，如果你的业务有很多的CPU计算，实际上也相当于这个计算阻塞了这个单线程，就不适合Node开发。<br>当应用程序需要处理大量并发的I/O，而在向客户端发出响应之前，应用程序内部并不需要进行非常复杂的处理的时候，Node.js非常适合。Node.js也非常适合与web socket配合，开发长连接的实时交互应用程序。<br>比如：<br>● 用户表单收集<br>● 考试系统<br>● 聊天室<br>● 图文直播<br>● 提供JSON的API（为前台Angular使用）</p>
 
       
 
@@ -305,6 +309,11 @@
     </a>
   
   
+    <a href="/2017/05/08/nodejs-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nodejs-2</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
 </nav>
 
 
@@ -406,11 +415,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+                <a href="javascript:void(0)" class="js-tag color2">fly.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">fly.js</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -419,10 +432,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>
