@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dingjiamughal.github.io">
-  <title>Tag: 微信小程序 | Djmughal&#39;s website</title>
+  <title>jQuery实现加入购物车飞入动画效果 | Djmughal&#39;s website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录生活点滴">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Djmughal's website">
-<meta property="og:url" content="http://dingjiamughal.github.io/tags/微信小程序/index.html">
+  <meta name="description" content="在电商购物网站浏览中意的商品时，点击页面中的“加入购物车”按钮即可将商品加入的购物车中。本文介绍借助一款基于jQuery的动画插件，点击加入购物车按钮时，实现商品将飞入到右侧的购物车中的效果。">
+<meta name="keywords" content="fly.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery实现加入购物车飞入动画效果">
+<meta property="og:url" content="http://dingjiamughal.github.io/2017/05/01/jQuery/flyjs/index.html">
 <meta property="og:site_name" content="Djmughal's website">
-<meta property="og:description" content="记录生活点滴">
+<meta property="og:description" content="在电商购物网站浏览中意的商品时，点击页面中的“加入购物车”按钮即可将商品加入的购物车中。本文介绍借助一款基于jQuery的动画插件，点击加入购物车按钮时，实现商品将飞入到右侧的购物车中的效果。">
+<meta property="og:updated_time" content="2017-05-02T04:26:42.492Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Djmughal's website">
-<meta name="twitter:description" content="记录生活点滴">
+<meta name="twitter:title" content="jQuery实现加入购物车飞入动画效果">
+<meta name="twitter:description" content="在电商购物网站浏览中意的商品时，点击页面中的“加入购物车”按钮即可将商品加入的购物车中。本文介绍借助一款基于jQuery的动画插件，点击加入购物车按钮时，实现商品将飞入到右侧的购物车中的效果。">
   
     <link rel="alternative" href="/atom.xml" title="Djmughal&#39;s website" type="application/atom+xml">
   
@@ -154,120 +156,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jQuery/flyjs" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/02/微信小程序/wx-xiaochengxu-2/" class="archive-article-date">
-  	<time datetime="2017-05-02T07:13:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/02/微信小程序/wx-xiaochengxu-2/">生命周期、参数传递和模板template</a>
+    <h1 class="article-title" itemprop="name">
+      jQuery实现加入购物车飞入动画效果
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/01/jQuery/flyjs/" class="archive-article-date">
+  	<time datetime="2017-05-01T02:44:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在电商购物网站浏览中意的商品时，点击页面中的“加入购物车”按钮即可将商品加入的购物车中。本文介绍借助一款基于jQuery的动画插件，点击加入购物车按钮时，实现商品将飞入到右侧的购物车中的效果。</p>
+<a id="more"></a>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>首先载入jQuery库文件和jquery.fly.min.js插件。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.fly.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"requestAnimationFrame.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>布置html结构<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"box"</span>&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/lg.jpg"</span> <span class="attr">width</span>=<span class="string">"180"</span> <span class="attr">height</span>=<span class="string">"180"</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>￥<span class="tag">&lt;<span class="name">span</span>&gt;</span>3499.00<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>LG 49LF5400-CA 49寸IPS硬屏富贵招财铜钱设计<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"button orange addcar"</span>&gt;</span>加入购物车<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"box"</span>&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/hs.jpg"</span> <span class="attr">width</span>=<span class="string">"180"</span> <span class="attr">height</span>=<span class="string">"180"</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>￥<span class="tag">&lt;<span class="name">span</span>&gt;</span>3799.00<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Hisense/海信 LED50T1A 海信电视官方旗舰店<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"button orange addcar"</span>&gt;</span>加入购物车<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"box"</span>&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/cw.jpg"</span> <span class="attr">width</span>=<span class="string">"180"</span> <span class="attr">height</span>=<span class="string">"180"</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>￥<span class="tag">&lt;<span class="name">span</span>&gt;</span>￥3999.00<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Skyworth/创维 50E8EUS 8核4Kj极清酷开系统智能液晶电视<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"button orange addcar"</span>&gt;</span>加入购物车<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"box"</span>&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/ls.jpg"</span> <span class="attr">width</span>=<span class="string">"180"</span> <span class="attr">height</span>=<span class="string">"180"</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>￥<span class="tag">&lt;<span class="name">span</span>&gt;</span>6969.00<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>乐视TV Letv X60S 4核1080P高清3D安卓智能超级电视<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"button orange addcar"</span>&gt;</span>加入购物车<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>在页面的右侧加上购物车以及提示信息。<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"m-sidebar"</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"cart"</span>&gt;</div><div class="line">        &lt;i <span class="built_in">id</span>=<span class="string">"end"</span>&gt;&lt;/i&gt;</div><div class="line">        &lt;span&gt;购物车&lt;/span&gt;</div><div class="line">    &lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"msg"</span>&gt;已成功加入购物车！&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;<span class="attribute">float</span>:left; <span class="attribute">width</span>:<span class="number">198px</span>; <span class="attribute">height</span>:<span class="number">320px</span>; <span class="attribute">margin-left</span>:<span class="number">5px</span>; <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#e0e0e0</span>; <span class="attribute">text-align</span>:center&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">p</span>&#123;<span class="attribute">line-height</span>:<span class="number">20px</span>; <span class="attribute">padding</span>:<span class="number">4px</span> <span class="number">4px</span> <span class="number">10px</span> <span class="number">4px</span>; <span class="attribute">text-align</span>:left&#125;</div><div class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span>&#123;<span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#f90</span>&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">h4</span>&#123;<span class="attribute">line-height</span>:<span class="number">32px</span>; <span class="attribute">font-size</span>:<span class="number">14px</span>; <span class="attribute">color</span>:<span class="number">#f30</span>;<span class="attribute">font-weight</span>:<span class="number">500</span>&#125;</div><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">h4</span> <span class="selector-tag">span</span>&#123;<span class="attribute">font-size</span>:<span class="number">20px</span>&#125;</div><div class="line"><span class="selector-class">.u-flyer</span>&#123;<span class="attribute">display</span>: block;<span class="attribute">width</span>: <span class="number">50px</span>;<span class="attribute">height</span>: <span class="number">50px</span>;<span class="attribute">border-radius</span>: <span class="number">50px</span>;<span class="attribute">position</span>: fixed;<span class="attribute">z-index</span>: <span class="number">9999</span>;&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.m-sidebar</span>&#123;<span class="attribute">position</span>: fixed;<span class="attribute">top</span>: <span class="number">0</span>;<span class="attribute">right</span>: <span class="number">0</span>;<span class="attribute">background</span>: <span class="number">#000</span>;<span class="attribute">z-index</span>: <span class="number">2000</span>;<span class="attribute">width</span>: <span class="number">35px</span>;<span class="attribute">height</span>: <span class="number">100%</span>;<span class="attribute">font-size</span>: <span class="number">12px</span>;<span class="attribute">color</span>: <span class="number">#fff</span>;&#125;</div><div class="line"><span class="selector-class">.cart</span>&#123;<span class="attribute">color</span>: <span class="number">#fff</span>;<span class="attribute">text-align</span>:center;<span class="attribute">line-height</span>: <span class="number">20px</span>;<span class="attribute">padding</span>: <span class="number">200px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0px</span>;&#125;</div><div class="line"><span class="selector-class">.cart</span> <span class="selector-tag">span</span>&#123;<span class="attribute">display</span>:block;<span class="attribute">width</span>:<span class="number">20px</span>;<span class="attribute">margin</span>:<span class="number">0</span> auto;&#125;</div><div class="line"><span class="selector-class">.cart</span> <span class="selector-tag">i</span>&#123;<span class="attribute">width</span>:<span class="number">35px</span>;<span class="attribute">height</span>:<span class="number">35px</span>;<span class="attribute">display</span>:block; <span class="attribute">background</span>:<span class="built_in">url</span>(car.png) no-repeat;&#125;</div><div class="line"><span class="selector-id">#msg</span>&#123;<span class="attribute">position</span>:fixed; <span class="attribute">top</span>:<span class="number">300px</span>; <span class="attribute">right</span>:<span class="number">35px</span>; <span class="attribute">z-index</span>:<span class="number">10000</span>; <span class="attribute">width</span>:<span class="number">1px</span>; <span class="attribute">height</span>:<span class="number">52px</span>; <span class="attribute">line-height</span>:<span class="number">52px</span>; <span class="attribute">font-size</span>:<span class="number">20px</span>; <span class="attribute">text-align</span>:center; <span class="attribute">color</span>:<span class="number">#fff</span>; <span class="attribute">background</span>:<span class="number">#360</span>; <span class="attribute">display</span>:none&#125;</div></pre></td></tr></table></figure>
+<h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h3><p>我们要实现的效果是，当用户点击“加入购物车”按钮时，当前商品图片会变成一个缩小的圆球，以按钮为起点，向右侧以抛物线的形式飞出，最后落入页面右侧的购物车里，并提示操作成功。在飞出之前，我们要获取当前商品的图片，然后调用fly插件，之后的抛物线轨迹都是由fly插件完成，我们只需定义起点和终点等参数即可。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> offset = $(<span class="string">"#end"</span>).offset();</div><div class="line">    $(<span class="string">".addcar"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> addcar = $(<span class="keyword">this</span>);</div><div class="line">        <span class="keyword">var</span> img = addcar.parent().find(<span class="string">'img'</span>).attr(<span class="string">'src'</span>);</div><div class="line">        <span class="keyword">var</span> flyer = $(<span class="string">'&lt;img class="u-flyer" src="'</span>+img+<span class="string">'"&gt;'</span>);</div><div class="line">        flyer.fly(&#123;</div><div class="line">            <span class="attr">start</span>: &#123;</div><div class="line">                <span class="attr">left</span>: event.pageX, <span class="comment">//开始位置（必填）#fly元素会被设置成position: fixed</span></div><div class="line">                top: event.pageY <span class="comment">//开始位置（必填）</span></div><div class="line">            &#125;,</div><div class="line">            <span class="attr">end</span>: &#123;</div><div class="line">                <span class="attr">left</span>: offset.left+<span class="number">10</span>, <span class="comment">//结束位置（必填）</span></div><div class="line">                top: offset.top+<span class="number">10</span>, <span class="comment">//结束位置（必填）</span></div><div class="line">                width: <span class="number">0</span>, <span class="comment">//结束时宽度</span></div><div class="line">                height: <span class="number">0</span> <span class="comment">//结束时高度</span></div><div class="line">            &#125;,</div><div class="line">            <span class="attr">onEnd</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//结束回调</span></div><div class="line">                $(<span class="string">"#msg"</span>).show().animate(&#123;<span class="attr">width</span>: <span class="string">'250px'</span>&#125;, <span class="number">200</span>).fadeOut(<span class="number">1000</span>); <span class="comment">//提示信息</span></div><div class="line">                addcar.css(<span class="string">"cursor"</span>,<span class="string">"default"</span>).removeClass(<span class="string">'orange'</span>).unbind(<span class="string">'click'</span>);</div><div class="line">                <span class="keyword">this</span>.destory(); <span class="comment">//移除dom</span></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>demo演示地址，<a href="http://www.xhrsama.com/fly.js/feirugouwuche" target="_blank" rel="external">http://www.xhrsama.com/fly.js/feirugouwuche</a><br>源码地址，<a href="https://github.com/dingjiamughal/fly.js" target="_blank" rel="external">https://github.com/dingjiamughal/fly.js</a></p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">fly.js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/微信小程序/" class="article-tag-list-link color1">微信小程序</a>
+        			<a href="/categories/jQuery/" class="article-tag-list-link color2">jQuery</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://dingjiamughal.github.io/2017/05/01/jQuery/flyjs/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/28/微信小程序/wx-xiaochengxu-1/" class="archive-article-date">
-  	<time datetime="2017-04-28T06:45:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/28/微信小程序/wx-xiaochengxu-1/">微信小程序初体验</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/微信小程序/" class="article-tag-list-link color1">微信小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+<nav id="article-nav">
+  
+    <a href="/2017/04/28/微信小程序/wx-xiaochengxu-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          微信小程序初体验
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/02/微信小程序/wx-xiaochengxu-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">生命周期、参数传递和模板template</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -290,9 +351,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
