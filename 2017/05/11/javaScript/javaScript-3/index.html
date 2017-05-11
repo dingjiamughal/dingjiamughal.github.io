@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://dingjiamughal.github.io">
   <title>javaScript —— 继承 | Djmughal&#39;s website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript中的继承是通过原型链来体现的12345678function foo()&amp;#123;&amp;#125;;  foo.prototype.a=100;  foo.prototype.b=200;var f1=new foo();f1.a=10console.log(f1.a) //10console.log(f1.b) //200 以上代码中，f1是Foo函数new出来的对象，f1.a">
+  <meta name="description" content="javascript中的继承是通过原型链来体现的">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javaScript —— 继承">
 <meta property="og:url" content="http://dingjiamughal.github.io/2017/05/11/javaScript/javaScript-3/index.html">
 <meta property="og:site_name" content="Djmughal's website">
-<meta property="og:description" content="javascript中的继承是通过原型链来体现的12345678function foo()&amp;#123;&amp;#125;;  foo.prototype.a=100;  foo.prototype.b=200;var f1=new foo();f1.a=10console.log(f1.a) //10console.log(f1.b) //200 以上代码中，f1是Foo函数new出来的对象，f1.a">
-<meta property="og:updated_time" content="2017-05-11T10:02:35.156Z">
+<meta property="og:description" content="javascript中的继承是通过原型链来体现的">
+<meta property="og:updated_time" content="2017-05-11T10:05:44.352Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javaScript —— 继承">
-<meta name="twitter:description" content="javascript中的继承是通过原型链来体现的12345678function foo()&amp;#123;&amp;#125;;  foo.prototype.a=100;  foo.prototype.b=200;var f1=new foo();f1.a=10console.log(f1.a) //10console.log(f1.b) //200 以上代码中，f1是Foo函数new出来的对象，f1.a">
+<meta name="twitter:description" content="javascript中的继承是通过原型链来体现的">
   
     <link rel="alternative" href="/atom.xml" title="Djmughal&#39;s website" type="application/atom+xml">
   
@@ -174,7 +174,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>javascript中的继承是通过原型链来体现的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">  foo.prototype.a=<span class="number">100</span>;</div><div class="line">  foo.prototype.b=<span class="number">200</span>;</div><div class="line"><span class="keyword">var</span> f1=<span class="keyword">new</span> foo();</div><div class="line">f1.a=<span class="number">10</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(f1.a) <span class="comment">//10</span></div><div class="line"><span class="built_in">console</span>.log(f1.b) <span class="comment">//200</span></div></pre></td></tr></table></figure></p>
+        <p>javascript中的继承是通过原型链来体现的<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">  foo.prototype.a=<span class="number">100</span>;</div><div class="line">  foo.prototype.b=<span class="number">200</span>;</div><div class="line"><span class="keyword">var</span> f1=<span class="keyword">new</span> foo();</div><div class="line">f1.a=<span class="number">10</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(f1.a) <span class="comment">//10</span></div><div class="line"><span class="built_in">console</span>.log(f1.b) <span class="comment">//200</span></div></pre></td></tr></table></figure></p>
 <p>以上代码中，f1是Foo函数new出来的对象，f1.a是f1对象的基本属性，f1.b是怎么来的呢？——从Foo.prototype得来，因为f1.<strong>proto</strong>指向的是Foo.prototype访问一个对象的属性时，先在基本属性中查找，如果没有，再沿着<strong>proto</strong>这条链向上找，这就是原型链。所以在访问f1.b时，f1的基本属性中没有b，于是沿着<strong>proto</strong>找到了Foo.prototype.b。</p>
 <blockquote>
 <p>那么我们在实际应用中如何区分一个属性到底是基本的还是从原型中找到的呢？hasOwnProperty</p>
@@ -443,19 +443,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">fly.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">fly.js</a>
               </li>
              
               <li class="article-tag-list-item">
