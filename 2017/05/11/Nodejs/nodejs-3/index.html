@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dingjiamughal.github.io">
-  <title>Tag: css | Djmughal&#39;s website</title>
+  <title>Nodejs——Express框架 | Djmughal&#39;s website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录生活点滴">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Djmughal's website">
-<meta property="og:url" content="http://dingjiamughal.github.io/tags/css/index.html">
+  <meta name="description" content="Express在后台的受欢迎的程度，和jQuery一样，就是企业的事实上的标准。">
+<meta name="keywords" content="node.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nodejs——Express框架">
+<meta property="og:url" content="http://dingjiamughal.github.io/2017/05/11/Nodejs/nodejs-3/index.html">
 <meta property="og:site_name" content="Djmughal's website">
-<meta property="og:description" content="记录生活点滴">
+<meta property="og:description" content="Express在后台的受欢迎的程度，和jQuery一样，就是企业的事实上的标准。">
+<meta property="og:updated_time" content="2017-05-11T06:23:10.762Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Djmughal's website">
-<meta name="twitter:description" content="记录生活点滴">
+<meta name="twitter:title" content="Nodejs——Express框架">
+<meta name="twitter:description" content="Express在后台的受欢迎的程度，和jQuery一样，就是企业的事实上的标准。">
   
     <link rel="alternative" href="/atom.xml" title="Djmughal&#39;s website" type="application/atom+xml">
   
@@ -154,71 +156,175 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Nodejs/nodejs-3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/03/CSS/css-center/" class="archive-article-date">
-  	<time datetime="2017-05-03T02:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/03/CSS/css-center/">CSS居中</a>
+    <h1 class="article-title" itemprop="name">
+      Nodejs——Express框架
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/11/Nodejs/nodejs-3/" class="archive-article-date">
+  	<time datetime="2017-05-11T06:10:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Express在后台的受欢迎的程度，和jQuery一样，就是企业的事实上的标准。<br><a id="more"></a></p>
+<blockquote>
+<p>既然能堪比js的jQuery，Express有哪些便捷之处呢？</p>
+</blockquote>
+<p>原生Node开发，会发现有很多问题。比如：<br>呈递静态页面很不方便，需要处理每个HTTP请求，还要考虑304问题。<br>路由处理代码不直观清晰，需要写很多正则表达式和字符串函数。<br>不能集中精力写业务，要考虑很多其他的东西。<br>EXPRESS是在你的想法和服务器之间充当薄薄的一层。这并不意味着他不够健壮，或者没有足够的有用特性，而是尽量少干预你，让你充分表达自己的思想，同时提供一些有用的东西。</p>
+<p>英语官网：<a href="http://expressjs.com/" target="_blank" rel="external">http://expressjs.com/</a><br>中文官网：<a href="http://www.expressjs.com.cn/" target="_blank" rel="external">http://www.expressjs.com.cn/</a></p>
+<h4 id="Express强大的路由能力"><a href="#Express强大的路由能力" class="headerlink" title="Express强大的路由能力"></a>Express强大的路由能力</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line">app.get(<span class="string">"/"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">    res.send(<span class="string">"你好"</span>);</div><div class="line">&#125;);</div><div class="line">app.get(<span class="string">"/haha"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">    res.send(<span class="string">"这是haha页面，哈哈哈哈哈哈"</span>);</div><div class="line">&#125;);</div><div class="line">app.get(<span class="regexp">/^\/student\/([\d]&#123;10&#125;)$/</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">    res.send(<span class="string">"学生信息，学号"</span> + req.params[<span class="number">0</span>]);</div><div class="line">&#125;);</div><div class="line">app.get(<span class="string">"/teacher/:gonghao"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">    res.send(<span class="string">"老师信息，工号"</span> + req.params.gonghao);</div><div class="line">&#125;);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
+<p>原声的nodejs创建路由需要，创建服务器，解析url地址，判断路径。用了Express，这些问题都变得很无脑，另外Express可以对路径进行过滤操作。</p>
+<h4 id="静态文件伺服能力："><a href="#静态文件伺服能力：" class="headerlink" title="静态文件伺服能力："></a>静态文件伺服能力：</h4><p>app.use(express.static(“./public”));</p>
+<h4 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = require(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> <span class="keyword">app</span> = express();</div><div class="line"><span class="keyword">app</span>.<span class="keyword">set</span>(<span class="string">"view engine"</span>,<span class="string">"ejs"</span>);</div><div class="line"><span class="keyword">app</span>.<span class="built_in">get</span>(<span class="string">"/"</span>,function(req,res)&#123;</div><div class="line">   res.render(<span class="string">"haha"</span>,&#123;</div><div class="line">        <span class="string">"news"</span> : [<span class="string">"我是小新闻啊"</span>,<span class="string">"我也是啊"</span>,<span class="string">"哈哈哈哈"</span>]</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line"><span class="keyword">app</span>.listen(3000);</div></pre></td></tr></table></figure>
+<p>render()读取文件</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/css/" class="article-tag-list-link color4">css</a>
+        			<a href="/categories/node.js/" class="article-tag-list-link color3">node.js</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://dingjiamughal.github.io/2017/05/11/Nodejs/nodejs-3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/05/11/javaScript/javaScript-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          javaScript —— 原型prototype
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -241,9 +347,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
