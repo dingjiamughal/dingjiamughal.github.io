@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dingjiamughal.github.io">
-  <title>Archives | Djmughal&#39;s website</title>
+  <title>javaScript —— 继承 | Djmughal&#39;s website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录生活点滴">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Djmughal's website">
-<meta property="og:url" content="http://dingjiamughal.github.io/archives/index.html">
+  <meta name="description" content="javascript中的继承是通过原型链来体现的12345678function foo()&amp;#123;&amp;#125;;  foo.prototype.a=100;  foo.prototype.b=200;var f1=new foo();f1.a=10console.log(f1.a) //10console.log(f1.b) //200 以上代码中，f1是Foo函数new出来的对象，f1.a">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaScript —— 继承">
+<meta property="og:url" content="http://dingjiamughal.github.io/2017/05/11/javaScript/javaScript-3/index.html">
 <meta property="og:site_name" content="Djmughal's website">
-<meta property="og:description" content="记录生活点滴">
+<meta property="og:description" content="javascript中的继承是通过原型链来体现的12345678function foo()&amp;#123;&amp;#125;;  foo.prototype.a=100;  foo.prototype.b=200;var f1=new foo();f1.a=10console.log(f1.a) //10console.log(f1.b) //200 以上代码中，f1是Foo函数new出来的对象，f1.a">
+<meta property="og:updated_time" content="2017-05-11T10:02:35.156Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Djmughal's website">
-<meta name="twitter:description" content="记录生活点滴">
+<meta name="twitter:title" content="javaScript —— 继承">
+<meta name="twitter:description" content="javascript中的继承是通过原型链来体现的12345678function foo()&amp;#123;&amp;#125;;  foo.prototype.a=100;  foo.prototype.b=200;var f1=new foo();f1.a=10console.log(f1.a) //10console.log(f1.b) //200 以上代码中，f1是Foo函数new出来的对象，f1.a">
   
     <link rel="alternative" href="/atom.xml" title="Djmughal&#39;s website" type="application/atom+xml">
   
@@ -152,36 +154,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-javaScript/javaScript-3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      javaScript —— 继承
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/11/javaScript/javaScript-3/" class="archive-article-date">
+
+        
+        <a href="/2017/05/11/javaScript/javaScript-3/" class="archive-article-date">
   	<time datetime="2017-05-11T08:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/11/javaScript/javaScript-3/">javaScript —— 继承</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>javascript中的继承是通过原型链来体现的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">  foo.prototype.a=<span class="number">100</span>;</div><div class="line">  foo.prototype.b=<span class="number">200</span>;</div><div class="line"><span class="keyword">var</span> f1=<span class="keyword">new</span> foo();</div><div class="line">f1.a=<span class="number">10</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(f1.a) <span class="comment">//10</span></div><div class="line"><span class="built_in">console</span>.log(f1.b) <span class="comment">//200</span></div></pre></td></tr></table></figure></p>
+<p>以上代码中，f1是Foo函数new出来的对象，f1.a是f1对象的基本属性，f1.b是怎么来的呢？——从Foo.prototype得来，因为f1.<strong>proto</strong>指向的是Foo.prototype访问一个对象的属性时，先在基本属性中查找，如果没有，再沿着<strong>proto</strong>这条链向上找，这就是原型链。所以在访问f1.b时，f1的基本属性中没有b，于是沿着<strong>proto</strong>找到了Foo.prototype.b。</p>
+<blockquote>
+<p>那么我们在实际应用中如何区分一个属性到底是基本的还是从原型中找到的呢？hasOwnProperty</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> item <span class="keyword">in</span> f1)&#123;</div><div class="line">  <span class="keyword">if</span>(f1.hasOwnProperty(item))&#123;</div><div class="line">    <span class="built_in">console</span>.log(item)       <span class="comment">//a</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以发现只打印出了a，所以说prototype下的属性不是hasOwnProperty。因为hasOwnProperty只存在于Object.prototype，对象的原型链是沿着<strong>proto</strong>这条线走的，因此在查找f1.hasOwnProperty属性时，就会顺着原型链一直查找到Object.prototype。由于所有的对象的原型链都会找到Object.prototype，因此所有的对象都会有Object.prototype的方法。这就是所谓的“继承”。<br>到此为止，可以体会到js的继承模式，在原型链中查找方法。因此在子类继承父类的情况分为两种：</p>
+<blockquote>
+<p>1.属性的继承 : 调用父类的构造函数 call<br>2.方法的继承 : for in :  拷贝继承 (jquery也是采用拷贝继承extend)</p>
+</blockquote>
+<h4 id="属性的继承"><a href="#属性的继承" class="headerlink" title="属性的继承"></a>属性的继承</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span><span class="params">(name,sex)</span></span>&#123;   <span class="comment">//父类</span></div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.sex = sex;</div><div class="line">&#125;</div><div class="line">CreatePerson.prototype.showName = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">	alert( <span class="keyword">this</span>.name );</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> CreatePerson(<span class="string">'小明'</span>,<span class="string">'男'</span>);</div><div class="line"><span class="comment">//p1.showName();</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreateStar</span><span class="params">(name,sex,job)</span></span>&#123;  <span class="comment">//子类</span></div><div class="line">	CreatePerson.call(<span class="keyword">this</span>,name,sex);</div><div class="line">	<span class="keyword">this</span>.job = job;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="方法的继承"><a href="#方法的继承" class="headerlink" title="方法的继承"></a>方法的继承</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//CreateStar.prototype = CreatePerson.prototype;</span></div><div class="line"></div><div class="line">extend( CreateStar.prototype , CreatePerson.prototype );</div><div class="line">CreateStar.prototype.showJob = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> CreateStar(<span class="string">'黄晓明'</span>,<span class="string">'男'</span>,<span class="string">'演员'</span>);</div><div class="line">p2.showName();</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span><span class="params">(obj1,obj2)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> obj2)&#123;</div><div class="line">		obj1[attr] = obj2[attr];</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>值得一提，方法的继承不能够用CreateStar.prototype = CreatePerson.prototype;变量赋值的方式，会影响到父类的prototype，因此封装一个extend函数，把prototype中的属性传给子类</p>
+<h4 id="类式继承"><a href="#类式继承" class="headerlink" title="类式继承"></a>类式继承</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//类 : JS是没有类的概念的 , 把JS中的构造函数看做的类</span></div><div class="line"><span class="comment">//要做属性和方法继承的时候，要分开继承</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Aaa</span><span class="params">()</span></span>&#123;   <span class="comment">//父类</span></div><div class="line">	<span class="keyword">this</span>.name = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">&#125;</div><div class="line">Aaa.prototype.showName = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">	alert( <span class="keyword">this</span>.name );</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bbb</span><span class="params">()</span></span>&#123;   <span class="comment">//子类</span></div><div class="line">	Aaa.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;&#125;;</div><div class="line">F.prototype = Aaa.prototype;</div><div class="line">Bbb.prototype = <span class="keyword">new</span> F();</div><div class="line">Bbb.prototype.constructor = Bbb; <span class="comment">//修正指向问题</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> b1 = <span class="keyword">new</span> Bbb();</div><div class="line">b1.name.push(<span class="number">4</span>);</div><div class="line">alert(b1.name)          <span class="comment">//[1,2,3,4]</span></div><div class="line"><span class="keyword">var</span> b2 = <span class="keyword">new</span> Bbb();</div><div class="line">alert( b2.name );       <span class="comment">//[1,2,3]</span></div></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -193,7 +228,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -206,462 +241,120 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://dingjiamughal.github.io/2017/05/11/javaScript/javaScript-3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
+<nav id="article-nav">
+  
+    <a href="/2017/05/11/Nodejs/nodejs-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Nodejs——Express框架
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+
+
+
+  
+
+  
+
+  
+  <div id="SOHUCS" sid="javaScript/javaScript-3" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cyt0swybm"; 
+var conf = "c3c32f1b262cbc258f9db28c48f78470"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
+    <section id="comments">
+  <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+
+<div id="SOHUCS" sid="javaScript —— 继承" style="padding: 0px 30px 0px 46px;"></div>
+  <script>
+    (function(){
+      var appid = 'cyt0swybm',
+      conf = 'c3c32f1b262cbc258f9db28c48f78470';
+      var doc = document,
+      s = doc.createElement('script'),
+      h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+      s.type = 'text/javascript';
+      s.charset = 'utf-8';
+      s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+      h.insertBefore(s,h.firstChild);
+      window.SCS_NO_IFRAME = true;
+    })()
+  </script>
+    </section>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/11/Nodejs/nodejs-3/" class="archive-article-date">
-  	<time datetime="2017-05-11T06:10:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/11/Nodejs/nodejs-3/">Nodejs——Express框架</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/node.js/" class="article-tag-list-link color3">node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/11/javaScript/javaScript-2/" class="archive-article-date">
-  	<time datetime="2017-05-11T04:14:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/11/javaScript/javaScript-2/">javaScript —— 原型prototype</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaScript/" class="article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/11/javaScript/javaScript-1/" class="archive-article-date">
-  	<time datetime="2017-05-11T03:11:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/11/javaScript/javaScript-1/">javaScript —— 对象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JavaScript/" class="article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/08/Nodejs/nodejs-2/" class="archive-article-date">
-  	<time datetime="2017-05-08T08:42:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/08/Nodejs/nodejs-2/">nodejs-2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/node.js/" class="article-tag-list-link color3">node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/07/Nodejs/nodejs-1/" class="archive-article-date">
-  	<time datetime="2017-05-07T08:13:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/07/Nodejs/nodejs-1/">nodejs-1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/node.js/" class="article-tag-list-link color3">node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/03/CSS/css-center/" class="archive-article-date">
-  	<time datetime="2017-05-03T02:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/03/CSS/css-center/">CSS居中</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/css/" class="article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/02/微信小程序/wx-xiaochengxu-2/" class="archive-article-date">
-  	<time datetime="2017-05-02T07:13:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/02/微信小程序/wx-xiaochengxu-2/">生命周期、参数传递和模板template</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/微信小程序/" class="article-tag-list-link color1">微信小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/01/jQuery/flyjs/" class="archive-article-date">
-  	<time datetime="2017-05-01T02:44:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/01/jQuery/flyjs/">jQuery实现加入购物车飞入动画效果</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">fly.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jQuery/" class="article-tag-list-link color2">jQuery</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/28/微信小程序/wx-xiaochengxu-1/" class="archive-article-date">
-  	<time datetime="2017-04-28T06:45:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/28/微信小程序/wx-xiaochengxu-1/">微信小程序初体验</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/微信小程序/" class="article-tag-list-link color1">微信小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -684,8 +377,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

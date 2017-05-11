@@ -154,6 +154,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-javaScript/javaScript-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/11/javaScript/javaScript-3/">javaScript —— 继承</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/11/javaScript/javaScript-3/" class="archive-article-date">
+  	<time datetime="2017-05-11T08:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>javascript中的继承是通过原型链来体现的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">  foo.prototype.a=<span class="number">100</span>;</div><div class="line">  foo.prototype.b=<span class="number">200</span>;</div><div class="line"><span class="keyword">var</span> f1=<span class="keyword">new</span> foo();</div><div class="line">f1.a=<span class="number">10</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(f1.a) <span class="comment">//10</span></div><div class="line"><span class="built_in">console</span>.log(f1.b) <span class="comment">//200</span></div></pre></td></tr></table></figure></p>
+<p>以上代码中，f1是Foo函数new出来的对象，f1.a是f1对象的基本属性，f1.b是怎么来的呢？——从Foo.prototype得来，因为f1.<strong>proto</strong>指向的是Foo.prototype访问一个对象的属性时，先在基本属性中查找，如果没有，再沿着<strong>proto</strong>这条链向上找，这就是原型链。所以在访问f1.b时，f1的基本属性中没有b，于是沿着<strong>proto</strong>找到了Foo.prototype.b。</p>
+<blockquote>
+<p>那么我们在实际应用中如何区分一个属性到底是基本的还是从原型中找到的呢？hasOwnProperty</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> item <span class="keyword">in</span> f1)&#123;</div><div class="line">  <span class="keyword">if</span>(f1.hasOwnProperty(item))&#123;</div><div class="line">    <span class="built_in">console</span>.log(item)       <span class="comment">//a</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以发现只打印出了a，所以说prototype下的属性不是hasOwnProperty。因为hasOwnProperty只存在于Object.prototype，对象的原型链是沿着<strong>proto</strong>这条线走的，因此在查找f1.hasOwnProperty属性时，就会顺着原型链一直查找到Object.prototype。由于所有的对象的原型链都会找到Object.prototype，因此所有的对象都会有Object.prototype的方法。这就是所谓的“继承”。<br>到此为止，可以体会到js的继承模式，在原型链中查找方法。因此在子类继承父类的情况分为两种：</p>
+<blockquote>
+<p>1.属性的继承 : 调用父类的构造函数 call<br>2.方法的继承 : for in :  拷贝继承 (jquery也是采用拷贝继承extend)</p>
+</blockquote>
+<h4 id="属性的继承"><a href="#属性的继承" class="headerlink" title="属性的继承"></a>属性的继承</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span><span class="params">(name,sex)</span></span>&#123;   <span class="comment">//父类</span></div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.sex = sex;</div><div class="line">&#125;</div><div class="line">CreatePerson.prototype.showName = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">	alert( <span class="keyword">this</span>.name );</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> CreatePerson(<span class="string">'小明'</span>,<span class="string">'男'</span>);</div><div class="line"><span class="comment">//p1.showName();</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreateStar</span><span class="params">(name,sex,job)</span></span>&#123;  <span class="comment">//子类</span></div><div class="line">	CreatePerson.call(<span class="keyword">this</span>,name,sex);</div><div class="line">	<span class="keyword">this</span>.job = job;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="方法的继承"><a href="#方法的继承" class="headerlink" title="方法的继承"></a>方法的继承</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//CreateStar.prototype = CreatePerson.prototype;</span></div><div class="line"></div><div class="line">extend( CreateStar.prototype , CreatePerson.prototype );</div><div class="line">CreateStar.prototype.showJob = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> CreateStar(<span class="string">'黄晓明'</span>,<span class="string">'男'</span>,<span class="string">'演员'</span>);</div><div class="line">p2.showName();</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span><span class="params">(obj1,obj2)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> obj2)&#123;</div><div class="line">		obj1[attr] = obj2[attr];</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>值得一提，方法的继承不能够用CreateStar.prototype = CreatePerson.prototype;变量赋值的方式，会影响到父类的prototype，因此封装一个extend函数，把prototype中的属性传给子类</p>
+<h4 id="类式继承"><a href="#类式继承" class="headerlink" title="类式继承"></a>类式继承</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//类 : JS是没有类的概念的 , 把JS中的构造函数看做的类</span></div><div class="line"><span class="comment">//要做属性和方法继承的时候，要分开继承</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Aaa</span><span class="params">()</span></span>&#123;   <span class="comment">//父类</span></div><div class="line">	<span class="keyword">this</span>.name = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">&#125;</div><div class="line">Aaa.prototype.showName = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">	alert( <span class="keyword">this</span>.name );</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bbb</span><span class="params">()</span></span>&#123;   <span class="comment">//子类</span></div><div class="line">	Aaa.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;&#125;;</div><div class="line">F.prototype = Aaa.prototype;</div><div class="line">Bbb.prototype = <span class="keyword">new</span> F();</div><div class="line">Bbb.prototype.constructor = Bbb; <span class="comment">//修正指向问题</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> b1 = <span class="keyword">new</span> Bbb();</div><div class="line">b1.name.push(<span class="number">4</span>);</div><div class="line">alert(b1.name)          <span class="comment">//[1,2,3,4]</span></div><div class="line"><span class="keyword">var</span> b2 = <span class="keyword">new</span> Bbb();</div><div class="line">alert( b2.name );       <span class="comment">//[1,2,3]</span></div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/JavaScript/" class="article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/11/javaScript/javaScript-3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Nodejs/nodejs-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -246,6 +329,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p>每个函数都有一个属性叫做prototype。prototype又是一个对象（属性的集合），默认的只有一个叫做constructor的属性，指向这个函数本身。<br>
+        
+          <a class="article-more-a" href="/2017/05/11/javaScript/javaScript-2/#more">more >></a>
         
       
 
@@ -799,67 +885,10 @@
 
 
   
-    <article id="post-Hello World/nullpage" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/03/Hello World/nullpage/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/03/Hello World/nullpage/" class="archive-article-date">
-  	<time datetime="2017-04-03T08:10:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Hello World</p>
-        
-          <a class="article-more-a" href="/2017/04/03/Hello World/nullpage/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hello World</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/03/Hello World/nullpage/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -945,15 +974,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
               <li class="article-tag-list-item">
