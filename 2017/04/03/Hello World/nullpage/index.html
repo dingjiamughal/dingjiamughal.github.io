@@ -75,6 +75,10 @@
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
+    			
+    			<a q-on="click: openSlider(e, 'archives')" href="javascript:void(0)">archives</a>
+    			
+            
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
@@ -297,37 +301,19 @@
   
 
   
-  <div id="SOHUCS" sid="Hello World/nullpage" ></div> 
-<script type="text/javascript"> 
-(function(){ 
-var appid = "cyt0swybm"; 
-var conf = "c3c32f1b262cbc258f9db28c48f78470"; 
-var width = window.innerWidth || document.documentElement.clientWidth; 
-if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  <!--PC和WAP自适应版-->
+<div id="SOHUCS" ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyt0swybm';
+var conf = 'prod_ae3267a8a138a7435bcda70b8eb4af07';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
   
 
   
-    <section id="comments">
-  <!--高速版，加载速度快，使用前需测试页面的兼容性-->
-
-<div id="SOHUCS" sid="Hello World" style="padding: 0px 30px 0px 46px;"></div>
-  <script>
-    (function(){
-      var appid = 'cyt0swybm',
-      conf = 'c3c32f1b262cbc258f9db28c48f78470';
-      var doc = document,
-      s = doc.createElement('script'),
-      h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
-      s.type = 'text/javascript';
-      s.charset = 'utf-8';
-      s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
-      h.insertBefore(s,h.firstChild);
-      window.SCS_NO_IFRAME = true;
-    })()
-  </script>
-    </section>
-    
 
 
           </div>
@@ -379,19 +365,27 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'archives')"><a href="javascript:void(0)" q-class="active:archives">archives</a></li>
       
         
     </ul>
@@ -416,19 +410,19 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hello World</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">fly.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
