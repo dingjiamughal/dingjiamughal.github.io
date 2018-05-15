@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mughal Ding | 深入理解盒模型</title>
+    <meta name="description" content="你知道的 你微笑时好美">
+    <link rel="icon" href="/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/41.styles.6d1200e7.css" as="style"><link rel="preload" href="/assets/js/app.32879847.js" as="script"><link rel="preload" href="/assets/js/34.601249b9.js" as="script"><link rel="prefetch" href="/assets/js/21.9e33b15a.js"><link rel="prefetch" href="/assets/js/1.93f8495d.js"><link rel="prefetch" href="/assets/js/2.131d9d47.js"><link rel="prefetch" href="/assets/js/3.f84c509b.js"><link rel="prefetch" href="/assets/js/4.7377cbae.js"><link rel="prefetch" href="/assets/js/5.aeac1140.js"><link rel="prefetch" href="/assets/js/6.f452c8f3.js"><link rel="prefetch" href="/assets/js/7.6b82e9ed.js"><link rel="prefetch" href="/assets/js/8.2fe45e65.js"><link rel="prefetch" href="/assets/js/9.2eed9d93.js"><link rel="prefetch" href="/assets/js/10.eb26526a.js"><link rel="prefetch" href="/assets/js/11.b10eeb58.js"><link rel="prefetch" href="/assets/js/12.3a8116a0.js"><link rel="prefetch" href="/assets/js/13.cb2c8c0e.js"><link rel="prefetch" href="/assets/js/14.d736bc70.js"><link rel="prefetch" href="/assets/js/15.0af329c8.js"><link rel="prefetch" href="/assets/js/16.8b8633d0.js"><link rel="prefetch" href="/assets/js/17.08d178e2.js"><link rel="prefetch" href="/assets/js/18.a91b91ec.js"><link rel="prefetch" href="/assets/js/19.db8dab48.js"><link rel="prefetch" href="/assets/js/20.799f336f.js"><link rel="prefetch" href="/assets/js/0.e71abd06.js"><link rel="prefetch" href="/assets/js/22.6da8d672.js"><link rel="prefetch" href="/assets/js/23.c952d96d.js"><link rel="prefetch" href="/assets/js/24.ea8388b5.js"><link rel="prefetch" href="/assets/js/25.53c8dffb.js"><link rel="prefetch" href="/assets/js/26.ab336d00.js"><link rel="prefetch" href="/assets/js/27.c97b5baf.js"><link rel="prefetch" href="/assets/js/28.50049baa.js"><link rel="prefetch" href="/assets/js/29.a684e99e.js"><link rel="prefetch" href="/assets/js/30.fe29782c.js"><link rel="prefetch" href="/assets/js/31.cd99d657.js"><link rel="prefetch" href="/assets/js/32.87976ada.js"><link rel="prefetch" href="/assets/js/33.c6d8b3b9.js"><link rel="prefetch" href="/assets/js/35.0301fcb7.js"><link rel="prefetch" href="/assets/js/36.6128d0a0.js"><link rel="prefetch" href="/assets/js/37.fbf0fe14.js"><link rel="prefetch" href="/assets/js/38.6f686428.js"><link rel="prefetch" href="/assets/js/39.d3b43065.js"><link rel="prefetch" href="/assets/js/40.19a1439b.js">
+    <link rel="stylesheet" href="/assets/css/41.styles.6d1200e7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><!----><span class="site-name">
+      Mughal Ding
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/webpack/" class="nav-link">Webpack</a></div><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">Blog</a></div><div class="nav-item"><a href="/resume/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/aboutme/" class="nav-link">About me</a></div><a href="https://github.com/dingjiamughal/vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/webpack/" class="nav-link">Webpack</a></div><div class="nav-item"><a href="/blog/" class="nav-link router-link-active">Blog</a></div><div class="nav-item"><a href="/resume/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/aboutme/" class="nav-link">About me</a></div><a href="https://github.com/dingjiamughal/vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav><ul class="sidebar-links"><li><a href="/blog/fontendBuild.html" class="sidebar-link">前端自动化构建</a></li><li><a href="/blog/interview.html" class="sidebar-link">百度金融SSG的面试经历</a></li><li><a href="/blog/fe-optimize.html" class="sidebar-link">前端性能优化</a></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>javascript</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>nginx</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>css</span><span class="arrow down"></span></p><ul class="sidebar-group-items"><li><a href="/blog/css/box-model.html" class="active sidebar-link">深入理解盒模型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/css/box-model.html#padding" class="sidebar-link">padding</a></li><li class="sidebar-sub-header"><a href="/blog/css/box-model.html#border" class="sidebar-link">border</a></li><li class="sidebar-sub-header"><a href="/blog/css/box-model.html#margin" class="sidebar-link">margin</a></li></ul></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="深入理解盒模型"><a href="#深入理解盒模型" aria-hidden="true" class="header-anchor">#</a> 深入理解盒模型</h1><h2 id="padding"><a href="#padding" aria-hidden="true" class="header-anchor">#</a> padding</h2><h3 id="padding对元素尺寸的影响"><a href="#padding对元素尺寸的影响" aria-hidden="true" class="header-anchor">#</a> padding对元素尺寸的影响</h3><pre class="language-css"><code><span class="token selector">.box</span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span>50px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span>0 15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>此时box尺寸为 80px
+所以padding会影响元素尺寸，but···</p><pre class="language-css"><code><span class="token selector">.box</span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span>8cm<span class="token punctuation">;</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span>border-box<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span>0 8cm<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>padding加起来&gt;宽度了，那么这里的宽度就是16cm</p><p>总结：
+padding影响的是元素尺寸宽，元素尺寸的高度，不受影响。
+padding虽然不影响top和bottom，但是会影响背景色background
+width：auto时，box-sizing:border-box 同时padding值很小，不影响尺寸。</p><h3 id="利用以上特性-实现高度可控的分隔线"><a href="#利用以上特性-实现高度可控的分隔线" aria-hidden="true" class="header-anchor">#</a> 利用以上特性 实现高度可控的分隔线</h3><p>注册|退出登录
+如果用字体，那么高度统一了，现在要达到竖线高度短一些的效果</p><pre class="language-css"><code><span class="token selector">注册&lt;span&gt;&lt;/span&gt;退出登录
+span</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span>16px 6px 1px<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span>12px<span class="token punctuation">;</span>
+  <span class="token property">border-left</span><span class="token punctuation">:</span>2px solid<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="padding负值和百分比值"><a href="#padding负值和百分比值" aria-hidden="true" class="header-anchor">#</a> padding负值和百分比值</h3><blockquote><p>padding不支持负值
+padding百分比相对于box宽度计算</p></blockquote><p>运用场景：正方形背景图片
+不给宽高，直接padding：50%，利用padding会改变背景尺寸的特性</p><pre class="language-css"><code><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span>50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span><span class="token url">url('xxx')</span><span class="token punctuation">;</span>
+  <span class="token property">background-size</span><span class="token punctuation">:</span>100%<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.pic</span> <span class="token punctuation">{</span>
+  <span class="token property">positon</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span><span class="token property">left</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span><span class="token property">bottom</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span><span class="token property">right</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>padding：50%的情况适用于block元素，inline元素如果要达到同样的目的，则需要font-size:0;</p><h3 id="纯padding完成图形绘制"><a href="#纯padding完成图形绘制" aria-hidden="true" class="header-anchor">#</a> 纯padding完成图形绘制</h3><p>1.黑白眼</p><pre class="language-css"><code><span class="token selector">&lt;div class=&quot;eye&quot;&gt;&lt;/div&gt;
+.eye</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span>150px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span>150px<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span>10px solid<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> currentColor<span class="token punctuation">;</span>
+  <span class="token property">background-clip</span><span class="token punctuation">:</span> content-box<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>2.三条杠</p><pre class="language-css"><code><span class="token selector">.line</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span>150px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span>30px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span>15px 0<span class="token punctuation">;</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span>30px solid<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 30px solid<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> currentColor<span class="token punctuation">;</span>
+  <span class="token property">background-clip</span><span class="token punctuation">:</span> content-box<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>background-clip可以让背景颜色只在内容区显示，而不会显示让padding显示背景颜色。</p><h3 id="padding的布局"><a href="#padding的布局" aria-hidden="true" class="header-anchor">#</a> padding的布局</h3><p>图文，图片+div的形式布局，可以不需要div浮动，只需要图片浮动，给div加padding-left/right即可</p><h2 id="border"><a href="#border" aria-hidden="true" class="header-anchor">#</a> border</h2><h3 id="border-width不支持百分比"><a href="#border-width不支持百分比" aria-hidden="true" class="header-anchor">#</a> border-width不支持百分比</h3><p>border-width不支持百分比的原因可能是，应用场景，一些现实中的产品在边框的设计中为了考虑美感会设计的很窄，不能因为宽度很大而让边框也自适应变宽，这样不符合实际，因此border不支持百分比也是出于对美感的考虑。
+border-width只能够支持三种，thin:1px medium:3px think:5px</p><h3 id="border-style类型"><a href="#border-style类型" aria-hidden="true" class="header-anchor">#</a> border-style类型</h3><p>border-style:solid(实线)|dashed(虚线)|dotted(点线)|double（双线）|inset（内凹）|outset（外凸）
+border style:inset/outset/groove/ridge 内凹，外凸,沟槽，山脊，大眼瞪小眼，没啥用。不符合现在审美（间隔相框的既视感），兼容性很差。
+主要研究的是double属性，double的计算规则，随着border宽度的变大，
+边框大小：上边框+中缝+下边框 <br>
+1px:1+0+1 <br>
+2px:1+0+1 <br>
+3px:1+1+1 <br>
+4px:1+2+1 <br>
+5px:2+1+2 <br>
+6px:2+2+2 <br>
+7px:2+3+2 <br>
+由此可见，边框double=上边框（+-1）下边框。
+利用这个特性可以完成padding三条杠同样的效果：</p><pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span>120px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span>20px<span class="token punctuation">;</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span>60px double<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span>20px solid<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="border-color"><a href="#border-color" aria-hidden="true" class="header-anchor">#</a> border-color</h3><p>没什么多说的，border-color继承父级color，所以应用场景可以是，hover元素之后border和父级一起变色，就可以不给border加border-color，在transition中一起操作即可。</p><h3 id="透明边框transparent"><a href="#透明边框transparent" aria-hidden="true" class="header-anchor">#</a> 透明边框transparent</h3><p>1.构建三角形
+border构建图形最重要的一点就是构建三角图形</p><pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">border-width</span><span class="token punctuation">:</span>12px 20px<span class="token punctuation">;</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span>red red transparent transparent
+<span class="token punctuation">}</span>
+</code></pre><p>颜色分布：上、右、下、左</p><p>border模拟圆角
+由上下梯形中间矩形拼成
+2.固定定位
+固定在距离右侧50px背景图</p><pre class="language-css"><code><span class="token selector">div</span><span class="token punctuation">{</span>
+  <span class="token property">background-position</span><span class="token punctuation">:</span>100% 40px<span class="token punctuation">;</span>
+  <span class="token property">border-right</span><span class="token punctuation">:</span>50px solid transparent<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>3.增加响应区域大小</p><pre class="language-css"><code><span class="token selector">.ckbox</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span>#d0d0d5<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">background-clip</span><span class="token punctuation">:</span>content-box<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span>20px solid transparent<span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span>inset 0 1px,inset 1px 0,inset -1px 0,inset 0 -1px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>4.增加可视渲染区域</p><pre class="language-css"><code><span class="token selector">.icon</span><span class="token punctuation">{</span>
+<span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span><span class="token property">left</span><span class="token punctuation">:</span>-20px<span class="token punctuation">;</span>
+<span class="token property">border-right</span><span class="token punctuation">:</span>20px solid transparent<span class="token punctuation">;</span>
+<span class="token property">filter</span><span class="token punctuation">:</span><span class="token function">drop-shadow</span><span class="token punctuation">(</span>20px 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="border的布局"><a href="#border的布局" aria-hidden="true" class="header-anchor">#</a> border的布局</h3><p>1.两列等高布局</p><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>left<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>导航1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>module<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>模块1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre><pre class="language-css"><code><span class="token selector">.box</span> <span class="token punctuation">{</span>
+  <span class="token property">border-left</span><span class="token punctuation">:</span>300px solid #ccc<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.left</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span>300px<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> -300px<span class="token punctuation">;</span>
+  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>不支持百分比宽度</p><h2 id="margin"><a href="#margin" aria-hidden="true" class="header-anchor">#</a> margin</h2><h3 id="margin与容器尺寸"><a href="#margin与容器尺寸" aria-hidden="true" class="header-anchor">#</a> margin与容器尺寸</h3><p>margin-left/right 可以改变水平方向的尺寸
+margin-top/bottom 改变不了垂直方向尺寸，只能发生位置改变
+利用这一特性，可以解决图文混排的效果是，图片和文字各占一列</p><h3 id="margin百分比单位"><a href="#margin百分比单位" aria-hidden="true" class="header-anchor">#</a> margin百分比单位</h3><p>普通元素的百分比margin都是相对于容器<code>宽度</code>计算的
+如果position：absolute，则根据定位祖先的<code>宽度</code>来计算</p></div><div class="content edit-link"><a href="https://github.com/dingjiamughal/vuepress/edit/master/docs/blog/css/box-model.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/blog/nginx/nginxtest1.html" class="prev">
+          配置nginx
+        </a></span><!----></p></div><div class="bsa-cpc-wrapper"><div class="bsa-cpc"></div></div></div></div></div>
+    <script src="/assets/js/34.601249b9.js" defer></script><script src="/assets/js/app.32879847.js" defer></script>
+  </body>
+</html>
