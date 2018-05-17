@@ -21,11 +21,11 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.1.0/workbox
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "d662c44d0015d64df52904630770b767"
+    "revision": "fd7a0436e96646451bb7e14a4bcd9eff"
   },
   {
     "url": "aboutme/index.html",
-    "revision": "3628315727e9a8deeb3c45f3bfec1d1a"
+    "revision": "b07f32b1aaba68be7e82acd85a414e66"
   },
   {
     "url": "assets/css/43.styles.2036f210.css",
@@ -124,8 +124,8 @@ self.__precacheManifest = [
     "revision": "d5bd5ea957de93be2e78c274dfd06fc9"
   },
   {
-    "url": "assets/js/29.aac142a8.js",
-    "revision": "818d1960463c5c5799e82e1a4d55dbf8"
+    "url": "assets/js/29.c901744e.js",
+    "revision": "efe8818b7ba83f2c3da868e860f24fe0"
   },
   {
     "url": "assets/js/3.85968b71.js",
@@ -140,8 +140,8 @@ self.__precacheManifest = [
     "revision": "448169786ae73da0c78a58dd441db4a5"
   },
   {
-    "url": "assets/js/32.375e6e76.js",
-    "revision": "76c850713c97ac60e1abe68f25670e13"
+    "url": "assets/js/32.a38f9674.js",
+    "revision": "eb15ce3947f510a40a59ef9e40fb6a4d"
   },
   {
     "url": "assets/js/33.f8d7ee5d.js",
@@ -208,108 +208,108 @@ self.__precacheManifest = [
     "revision": "57ddb327eca2de37ecfac9fa40613a20"
   },
   {
-    "url": "assets/js/app.8a3f6906.js",
-    "revision": "dca85adada9038feb0118b127b95af81"
+    "url": "assets/js/app.20ef1816.js",
+    "revision": "b93d496a0eb2f770648119210d30fa10"
   },
   {
     "url": "blog/css/box-model.html",
-    "revision": "72b27dc747465bede22425cc2b688ca2"
+    "revision": "32583b9b78329d8f771b76e4ca675dbb"
   },
   {
     "url": "blog/fe-optimize.html",
-    "revision": "4f86d8eb9f346441be7cb0321c85e17b"
+    "revision": "2e06aed04b1b6ea0b68ebf168137a476"
   },
   {
     "url": "blog/fontendBuild.html",
-    "revision": "cd8f4dd237301cd222abf2122d01c2b2"
+    "revision": "72c4046e1f02c35f29c2309c128df8a6"
   },
   {
     "url": "blog/index.html",
-    "revision": "cc0c55dbf9be9403930b472afe19e489"
+    "revision": "71dea12c147fa925a7b5d7f95c1bd37c"
   },
   {
     "url": "blog/interview-1.html",
-    "revision": "0b5134e29772810e7600878110ed81d2"
+    "revision": "9e0d5dfdbeda98765d8467e446553eaa"
   },
   {
     "url": "blog/interview-2.html",
-    "revision": "6101a5bb84d9c1dd188f81a84fab4b40"
+    "revision": "05876e67d3019d882c02c2539c8a8a86"
   },
   {
     "url": "blog/javascript/es6类.html",
-    "revision": "554d91644cbd3fbf451242c5a74c29b0"
+    "revision": "4d00a2415ba45c7f6969ca229c8080b9"
   },
   {
     "url": "blog/nginx/nginxtest1.html",
-    "revision": "0275b0837201b7cafff01102189a48a2"
+    "revision": "ec5442cfbd0c4433058c0658bb97db39"
   },
   {
     "url": "blog/vue/vue-plugin.html",
-    "revision": "fb5e061f8c5816df08af0cda5ea18626"
+    "revision": "f7444de0f0bcf1da241ab92ad8c93e5b"
   },
   {
     "url": "en/aboutme/index.html",
-    "revision": "b55a630e718a792d46dddf81906137cc"
+    "revision": "e87e309e9503a191c5fdf040f4df2349"
   },
   {
     "url": "en/blog/index.html",
-    "revision": "aa9a00d5c3d0a5f8edfe27c7537bbf05"
+    "revision": "0ba0a310ee442edf82a3576ae0b06dd1"
   },
   {
     "url": "en/index.html",
-    "revision": "bc6f49e5a3076d78d72af3c9670cac91"
+    "revision": "3b4817d207e0447085ea9281c208c0d5"
   },
   {
     "url": "en/webpack/index.html",
-    "revision": "edf469168065c70ab4802be58498f6cf"
+    "revision": "485a6111e80ef0ec080dd3e5a9fe442f"
   },
   {
     "url": "en/webpack/webpack&&vue.html",
-    "revision": "6f513730f28a35ac0de93221460620a0"
+    "revision": "4d5a1814d7df8775abd5bcf8924c8aca"
   },
   {
     "url": "en/webpack/优化打包速度.html",
-    "revision": "a0a1c2d6e0e71f37ef6c4a506c9e813e"
+    "revision": "02bbe4a16c2cdb062aa22a001bec6a54"
   },
   {
     "url": "en/webpack/使用middleware搭建开发环境.html",
-    "revision": "81da5cbcfa20c000b26092d16b521ab2"
+    "revision": "ea49dedda07e43225a7ba1e53585d981"
   },
   {
     "url": "en/webpack/多页应用打包.html",
-    "revision": "03a74e9fd54eab5d763b6aff1300a3ab"
+    "revision": "38bcfefe5023655f2ec8a27ca29df061"
   },
   {
     "url": "en/webpack/开发环境和生产环境.html",
-    "revision": "813d2af24dcdfcc3aa668856cd6ecfd2"
+    "revision": "65bd8276198ffe3fc847d7c819d770c0"
   },
   {
     "url": "en/webpack/打包css.html",
-    "revision": "0874e009b8c9c8a1fc3e979154f03825"
+    "revision": "5c61abe71e0b574001a1ba4e7851b36e"
   },
   {
     "url": "en/webpack/打包HTML.html",
-    "revision": "a3785aca78b06ddcd697074150ab9135"
+    "revision": "afd3dd245299530ac22631b9573104ca"
   },
   {
     "url": "en/webpack/打包图片.html",
-    "revision": "e18153b784eddbd8f724db95112267fe"
+    "revision": "1a2f7a0e645a3c07d286ec23212d2de0"
   },
   {
     "url": "en/webpack/打包结果分析.html",
-    "revision": "8bbdb24bae63c417007af92c101cf49c"
+    "revision": "db9664c8d369e7defece606165ddcfb1"
   },
   {
     "url": "en/webpack/提取公共代码.html",
-    "revision": "e904d919502d39b8094a420bbf504c3a"
+    "revision": "f6a1d0e8a75eebc9729af4741914893e"
   },
   {
     "url": "en/webpack/搭建本地开发环境.html",
-    "revision": "c42b73d1f1f848f23acebdee70b86dcc"
+    "revision": "713911b14ad3268adc1aa6ec9e6dbc19"
   },
   {
     "url": "en/webpack/模块化及babel.html",
-    "revision": "ba0ea1440bbead67959fae59d3393f35"
+    "revision": "8f77a75931efd01691ebf00bc96dfbb6"
   },
   {
     "url": "hero.png",
@@ -373,7 +373,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "2bf0c73398c298ed851340277f2da72e"
+    "revision": "6fc314a823f9845632500018e467ad13"
   },
   {
     "url": "interview.png",
@@ -385,55 +385,55 @@ self.__precacheManifest = [
   },
   {
     "url": "webpack/index.html",
-    "revision": "c8ae491c1e8fc8dc8fe63c3d45bb18d9"
+    "revision": "c8cf146c2a3040fb07fb4c8aeb254ecb"
   },
   {
     "url": "webpack/webpack&&vue.html",
-    "revision": "c6037ec71dbeb2b63a1f562c471966b2"
+    "revision": "fc87095f72bb268a2f51413bcdd1d148"
   },
   {
     "url": "webpack/优化打包速度.html",
-    "revision": "3be3dfcdb62ef2a9fbd100242661a01e"
+    "revision": "050201f4fc8677e8e20f81eb1af957e3"
   },
   {
     "url": "webpack/使用middleware搭建开发环境.html",
-    "revision": "f18c76b725849dc96a15ba5c75f9bcaa"
+    "revision": "afb7fe092e652be5336c7f03662da9c2"
   },
   {
     "url": "webpack/多页应用打包.html",
-    "revision": "d64c1d80335ea38c8d2fc8bea4b96335"
+    "revision": "bfc0f77da9e5e2721e32b252aca81414"
   },
   {
     "url": "webpack/开发环境和生产环境.html",
-    "revision": "18ce2e6870312572f849d9e58bb551ae"
+    "revision": "4eba6e434345904a7edaec3ecc6fa71a"
   },
   {
     "url": "webpack/打包css.html",
-    "revision": "ce707061c10c3b2e87cdbbd26ba1ee1f"
+    "revision": "883528848de47ff90f8a7171e5c42319"
   },
   {
     "url": "webpack/打包HTML.html",
-    "revision": "a30ae64e21a9b70a96c0206fd4b8e866"
+    "revision": "0e6ccd3acfc608f81b2879903e5b4ba8"
   },
   {
     "url": "webpack/打包图片.html",
-    "revision": "9dcd421e7c7b2fb212de9f0197731a62"
+    "revision": "3e2735ca54bbc9e3e60a6419c55fa616"
   },
   {
     "url": "webpack/打包结果分析.html",
-    "revision": "38a60ddd8d895b9a39881749d567af48"
+    "revision": "ce3ae911a53e781439ecd5973e0d7317"
   },
   {
     "url": "webpack/提取公共代码.html",
-    "revision": "66ae5af65eff6377128664a4f585e99e"
+    "revision": "478449838b199eddb1e3a56dac5421d4"
   },
   {
     "url": "webpack/搭建本地开发环境.html",
-    "revision": "8f907764244f53c53da1304c538b0707"
+    "revision": "8e54dbae85f0f54a4ea26a7f1092bcad"
   },
   {
     "url": "webpack/模块化及babel.html",
-    "revision": "33431a7195ec6c3481776a8235ce4d54"
+    "revision": "be1b09795024ed277a4f2e22a38c44df"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
